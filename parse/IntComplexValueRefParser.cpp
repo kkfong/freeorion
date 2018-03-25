@@ -35,6 +35,7 @@ namespace parse {
                 > label(tok.Name_) >     string_grammar
               ) [ _val = construct_movable_(new_<ValueRef::ComplexVariable<int>>(_1, nullptr, nullptr, nullptr, deconstruct_movable_(_2, _pass), nullptr)) ]
             ;
+
          empire_name_ref
             =   (
                     (   tok.BuildingTypesOwned_
@@ -50,6 +51,7 @@ namespace parse {
                     |   tok.SpeciesShipsProduced_
                     |   tok.SpeciesShipsScrapped_
                     |   tok.TurnTechResearched_
+                    |   tok.TurnPolicyAdopted_
                     )
                 >  -(   label(tok.Empire_) >   int_rules.expr)
                 >  -(   label(tok.Name_) >     string_grammar)
